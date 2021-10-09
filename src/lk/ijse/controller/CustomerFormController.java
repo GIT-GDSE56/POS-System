@@ -37,7 +37,24 @@ public class CustomerFormController {
     }
 
     public void searchCustomerOnAction(ActionEvent actionEvent) {
-    }
+        try {
+            Customer customer = controller.searchCustomer(txtID.getText());
+            if (customer!=null){
+                txtName.setText(customer.getName());
+                txtAddress.setText(customer.getAddress());
+                txtContact.setText(String.valueOf(customer.getSalary()));
+            }else{
+                new Alert(Alert.AlertType.WARNING, "Empty Result").show();
+            }
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+
+
+
+
+
+}
 
     public void updateCustomerOnAction(ActionEvent actionEvent) {
     }
