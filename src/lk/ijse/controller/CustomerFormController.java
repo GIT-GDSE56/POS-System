@@ -70,5 +70,16 @@ public class CustomerFormController {
     }
 
     public void deleteCustomerOnAction(ActionEvent actionEvent) {
+        try {
+            boolean b = controller.deleteCustomer(txtID.getText());
+            if (b) {
+                new Alert(Alert.AlertType.INFORMATION, "Success").show();
+
+            }else{
+                new Alert(Alert.AlertType.WARNING, "Empty Result").show();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
