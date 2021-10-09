@@ -49,14 +49,24 @@ public class CustomerFormController {
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-
-
-
-
-
 }
 
     public void updateCustomerOnAction(ActionEvent actionEvent) {
+        Customer c1 = new Customer(
+                txtID.getText(), txtName.getText(), txtAddress.getText()
+                , Double.parseDouble(txtContact.getText())
+        );
+        try {
+            boolean b = controller.updateCustomer(c1);
+            if (b) {
+                new Alert(Alert.AlertType.INFORMATION, "Success").show();
+
+            }else{
+                new Alert(Alert.AlertType.WARNING, "Empty Result").show();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void deleteCustomerOnAction(ActionEvent actionEvent) {
