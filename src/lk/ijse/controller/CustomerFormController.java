@@ -59,7 +59,7 @@ public class CustomerFormController {
         try {
             boolean b = controller.updateCustomer(c1);
             if (b) {
-                new Alert(Alert.AlertType.INFORMATION, "Success").show();
+                new Alert(Alert.AlertType.INFORMATION, "Success ").show();
 
             }else{
                 new Alert(Alert.AlertType.WARNING, "Empty Result").show();
